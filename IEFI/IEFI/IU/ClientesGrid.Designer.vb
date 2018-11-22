@@ -25,15 +25,16 @@ Partial Class ClientesGrid
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ClientesGrid))
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Agregar = New System.Windows.Forms.ToolStripButton()
         Me.Modificar = New System.Windows.Forms.ToolStripButton()
         Me.Salir = New System.Windows.Forms.ToolStripButton()
         Me.Eliminar = New System.Windows.Forms.ToolStripButton()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.ClientesCollectionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IdProvinciaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nomprovincia = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ToolStrip1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ClientesCollectionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -47,20 +48,6 @@ Partial Class ClientesGrid
         Me.ToolStrip1.Size = New System.Drawing.Size(841, 38)
         Me.ToolStrip1.TabIndex = 0
         Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.AutoGenerateColumns = False
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.IdProvinciaDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.ClientesCollectionBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(3, 41)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(837, 314)
-        Me.DataGridView1.TabIndex = 1
         '
         'Agregar
         '
@@ -99,6 +86,20 @@ Partial Class ClientesGrid
         Me.Eliminar.Text = "Eliminar"
         Me.Eliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.AutoGenerateColumns = False
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.IdProvinciaDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.nomprovincia})
+        Me.DataGridView1.DataSource = Me.ClientesCollectionBindingSource
+        Me.DataGridView1.Location = New System.Drawing.Point(3, 41)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.Size = New System.Drawing.Size(837, 314)
+        Me.DataGridView1.TabIndex = 1
+        '
         'ClientesCollectionBindingSource
         '
         Me.ClientesCollectionBindingSource.DataSource = GetType(IEFI.ClientesCollection)
@@ -124,6 +125,13 @@ Partial Class ClientesGrid
         Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
         Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
         '
+        'nomprovincia
+        '
+        Me.nomprovincia.DataPropertyName = "nomprovincia"
+        Me.nomprovincia.HeaderText = "nomprovincia"
+        Me.nomprovincia.Name = "nomprovincia"
+        Me.nomprovincia.ReadOnly = True
+        '
         'ClientesGrid
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -148,8 +156,9 @@ Partial Class ClientesGrid
     Friend WithEvents Modificar As ToolStripButton
     Friend WithEvents Salir As ToolStripButton
     Friend WithEvents Eliminar As ToolStripButton
+    Friend WithEvents ClientesCollectionBindingSource As BindingSource
     Friend WithEvents IdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents IdProvinciaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ClientesCollectionBindingSource As BindingSource
+    Friend WithEvents nomprovincia As DataGridViewTextBoxColumn
 End Class

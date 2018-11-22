@@ -3,6 +3,7 @@
     Dim operacion_ As String
     Dim MiCliente As New ClienteClass
 
+    'El nombre de la propiedad debería ser IdProvincia
     Public Property IdRubro() As Integer
         Get
             Return IdProvincia_
@@ -75,7 +76,8 @@
 
     Private Sub ClienteForm_Load(sender As Object, e As EventArgs) Handles Me.Load
         ComboBox1.DataSource = ProvinciasList.Traerprovincias()
-        ComboBox1.DisplayMember = "Nombre"
+        'ComboBox1.DisplayMember = "Nombre" no existe la columna nombre en ProvinciasList
+        ComboBox1.DisplayMember = "Provincia"
         ComboBox1.ValueMember = "Id"
         ComboBox1.SelectedValue = IdProvincia_
 

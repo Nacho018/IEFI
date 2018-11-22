@@ -64,22 +64,22 @@ Partial Class ClienteForm
         Me.TextBox1.Location = New System.Drawing.Point(282, 60)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(145, 20)
+        Me.TextBox1.Size = New System.Drawing.Size(78, 20)
         Me.TextBox1.TabIndex = 3
         '
         'TextBox2
         '
         Me.TextBox2.Location = New System.Drawing.Point(283, 107)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(143, 20)
+        Me.TextBox2.Size = New System.Drawing.Size(242, 20)
         Me.TextBox2.TabIndex = 4
         '
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(285, 159)
+        Me.ComboBox1.Location = New System.Drawing.Point(282, 159)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(141, 21)
+        Me.ComboBox1.Size = New System.Drawing.Size(240, 21)
         Me.ComboBox1.TabIndex = 5
         '
         'Aceptar

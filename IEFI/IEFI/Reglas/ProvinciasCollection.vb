@@ -48,7 +48,8 @@ Public Class ProvinciasCollection
             MiProvincia = New ProvinciaClass
 
             MiProvincia.Id = CInt(dr("Id"))
-            MiProvincia.Provincia = dr("Descripcion")
+            'MiProvincia.Provincia = dr("Descripcion") No existe la columna Descripcion en la tabla Provincias
+            MiProvincia.Provincia = dr("Provincia")
             'MiArticulo.IdRubro = CInt("IdRubro")
 
             Me.Add(MiProvincia)
@@ -174,8 +175,5 @@ Public Class ProvinciasCollection
         Me.Items.Item(Me.FindCore(myProperty, MiProvincia.Id)) = MiProvincia
 
     End Sub
-
-
-
 
 End Class

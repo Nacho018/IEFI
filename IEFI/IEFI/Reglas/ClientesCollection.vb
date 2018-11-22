@@ -48,7 +48,8 @@ Public Class ClientesCollection
 
             MiCliente.Id = CInt(dr("Id"))
             MiCliente.Nombre = dr("Nombre")
-            MiCliente.IdProvincia = CInt("IdProvincia")
+            'MiCliente.IdProvincia = CInt("IdProvincia")
+            MiCliente.IdProvincia = CInt(dr("IdProvincia"))
 
             Me.Add(MiCliente)
         Next
@@ -72,14 +73,15 @@ Public Class ClientesCollection
         Dim MiCliente As ClienteClass
         Dim filtro As String = "IdProvincia = " & IdProvincia
 
-        ObjBaseDatos.objTabla = "Articulos"
+        ObjBaseDatos.objTabla = "Clientes"
         MiDataTable = ObjBaseDatos.TraerFiltrado(filtro)
 
         For Each dr As DataRow In MiDataTable.Rows
             MiCliente = New ClienteClass
 
             MiCliente.Id = CInt(dr("Id"))
-            MiCliente.Nombre = dr("Descripcion")
+            'MiCliente.Nombre = dr("Descripcion")
+            MiCliente.Nombre = dr("Nombre")
             MiCliente.IdProvincia = CInt(dr("IdProvincia"))
 
             Me.Add(MiCliente)
@@ -147,7 +149,7 @@ Public Class ClientesCollection
 
         'Instancio el el Objeto BaseDatosClass para acceder al la base productos.
         Dim objBaseDatos As New BaseDatosClass
-        objBaseDatos.objTabla = "Cliente"
+        objBaseDatos.objTabla = "Clientes"
 
         Dim resultado As Boolean
         resultado = objBaseDatos.Eliminar(MiCliente.Id)
@@ -184,7 +186,8 @@ Public Class ClientesCollection
         Dim vResultado As Boolean = False
 
         vSQL.Append("Nombre='" & MiCliente.Nombre & "'")
-        vSQL.Append(",IdRubro='" & MiCliente.IdProvincia.ToString & "'")
+        'vSQL.Append(",IdRubro='" & MiCliente.IdProvincia.ToString & "'") No existe la columna IdRubro
+        vSQL.Append(",IdProvincia='" & MiCliente.IdProvincia.ToString & "'")
 
         'Actualizo la tabla personas con el Id.
         Dim resultado As Boolean

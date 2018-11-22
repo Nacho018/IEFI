@@ -59,11 +59,6 @@
         DataGridView1.Rows(DataGridView1.CurrentRow.Index).Selected = False
         DataGridView1.Rows(DataGridView1.CurrentRow.Index).Selected = True
 
-
-
-
-
-
     End Sub
 
     Private Sub Salir_Click(sender As Object, e As EventArgs) Handles Salir.Click
@@ -73,10 +68,10 @@
 
     Private Sub ClientesGrid_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-
-
         'ArticulosCollectionBindingSource.DataSource = ClientesList.TraerClientes
-
+        ClientesCollectionBindingSource.DataSource = ClientesList.TraerClientes
+        'Debe llenar provinciasList para que aprezca la columna nomprovincia.
+        ProvinciasList.Traerprovincias()
 
         'Lleno el datagrid con turnosList.
         ' DataGridView1.DataSource = turnosList.TraerTurnos
@@ -101,7 +96,9 @@
 
         ClienteForm.TextBox1.Text = ClientesList.Item(fila).Id
         ClienteForm.TextBox2.Text = ClientesList.Item(fila).Nombre
-        ClienteForm.ComboBox1.Text = ClientesList.Item(fila).IdProvincia
+        'ClienteForm.ComboBox1.Text = ClientesList.Item(fila).IdProvincia
+        'Se pasa IdProvincia a la propiedadIdProvincia para seleccionar el item en el combo.
+        ClienteForm.IdRubro = ClientesList(fila).IdProvincia
 
 
     End Sub
