@@ -30,14 +30,13 @@ Partial Class ClientesGrid
         Me.Salir = New System.Windows.Forms.ToolStripButton()
         Me.Eliminar = New System.Windows.Forms.ToolStripButton()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.nomprovincia = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ClientesCollectionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IdProvinciaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FechaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SaldoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NomprovinciaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ClientesCollectionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ToolStrip1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ClientesCollectionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -96,7 +95,7 @@ Partial Class ClientesGrid
         Me.DataGridView1.AllowUserToResizeColumns = False
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.nomprovincia, Me.IdDataGridViewTextBoxColumn, Me.IdProvinciaDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.FechaDataGridViewTextBoxColumn, Me.SaldoDataGridViewTextBoxColumn, Me.NomprovinciaDataGridViewTextBoxColumn})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.IdProvinciaDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.FechaDataGridViewTextBoxColumn, Me.SaldoDataGridViewTextBoxColumn, Me.NomprovinciaDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.ClientesCollectionBindingSource
         Me.DataGridView1.GridColor = System.Drawing.Color.Cyan
         Me.DataGridView1.Location = New System.Drawing.Point(3, 41)
@@ -107,12 +106,9 @@ Partial Class ClientesGrid
         Me.DataGridView1.Size = New System.Drawing.Size(837, 314)
         Me.DataGridView1.TabIndex = 1
         '
-        'nomprovincia
+        'ClientesCollectionBindingSource
         '
-        Me.nomprovincia.DataPropertyName = "nomprovincia"
-        Me.nomprovincia.HeaderText = "nomprovincia"
-        Me.nomprovincia.Name = "nomprovincia"
-        Me.nomprovincia.ReadOnly = True
+        Me.ClientesCollectionBindingSource.DataSource = GetType(IEFI.ClientesCollection)
         '
         'IdDataGridViewTextBoxColumn
         '
@@ -156,10 +152,6 @@ Partial Class ClientesGrid
         Me.NomprovinciaDataGridViewTextBoxColumn.Name = "NomprovinciaDataGridViewTextBoxColumn"
         Me.NomprovinciaDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'ClientesCollectionBindingSource
-        '
-        Me.ClientesCollectionBindingSource.DataSource = GetType(IEFI.ClientesCollection)
-        '
         'ClientesGrid
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -185,12 +177,11 @@ Partial Class ClientesGrid
     Friend WithEvents Modificar As ToolStripButton
     Friend WithEvents Salir As ToolStripButton
     Friend WithEvents Eliminar As ToolStripButton
-    Friend WithEvents nomprovincia As DataGridViewTextBoxColumn
+    Friend WithEvents ClientesCollectionBindingSource As BindingSource
     Friend WithEvents IdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents IdProvinciaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents FechaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents SaldoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NomprovinciaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ClientesCollectionBindingSource As BindingSource
 End Class
