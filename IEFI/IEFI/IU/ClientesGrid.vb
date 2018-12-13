@@ -99,7 +99,10 @@
         'ClienteForm.ComboBox1.Text = ClientesList.Item(fila).IdProvincia
         'Se pasa IdProvincia a la propiedadIdProvincia para seleccionar el item en el combo.
         ClienteForm.IdRubro = ClientesList(fila).IdProvincia
-
+        ClienteForm.TextBox3.Text = ClientesList.Item(fila).Fecha
+        ClienteForm.TextBox4.Text = ClientesList.Item(fila).Saldo
 
     End Sub
+
+
 End Class

@@ -50,6 +50,8 @@ Public Class ClientesCollection
             MiCliente.Nombre = dr("Nombre")
             'MiCliente.IdProvincia = CInt("IdProvincia")
             MiCliente.IdProvincia = CInt(dr("IdProvincia"))
+            MiCliente.Fecha = CDate(dr("Fecha"))
+            MiCliente.Saldo = CDec(dr("Saldo"))
 
             Me.Add(MiCliente)
         Next
@@ -83,6 +85,8 @@ Public Class ClientesCollection
             'MiCliente.Nombre = dr("Descripcion")
             MiCliente.Nombre = dr("Nombre")
             MiCliente.IdProvincia = CInt(dr("IdProvincia"))
+            MiCliente.Fecha = CDate(dr("Fecha"))
+            MiCliente.Saldo = CDec(dr("Saldo"))
 
             Me.Add(MiCliente)
         Next
@@ -100,12 +104,16 @@ Public Class ClientesCollection
         Dim vsql As New StringBuilder
 
         vsql.Append("(Nombre")
-        vsql.Append(", IdProvincia)")
+        vsql.Append(", IdProvincia")
+        vsql.Append(", Fecha")
+        vsql.Append(", Saldo)")
 
         vsql.Append(" VALUES ")
 
         vsql.Append("('" & MiCliente.Nombre & "'")
-        vsql.Append(", '" & MiCliente.IdProvincia & "')")
+        vsql.Append(", '" & MiCliente.IdProvincia & "'")
+        vsql.Append(", '" & MiCliente.Fecha & "'")
+        vsql.Append(", '" & MiCliente.Saldo & "')")
 
         MiCliente.Id = ObjBasedeDato.Insertar(vsql.ToString)
 
@@ -186,8 +194,10 @@ Public Class ClientesCollection
         Dim vResultado As Boolean = False
 
         vSQL.Append("Nombre='" & MiCliente.Nombre & "'")
-        'vSQL.Append(",IdRubro='" & MiCliente.IdProvincia.ToString & "'") No existe la columna IdRubro
+
         vSQL.Append(",IdProvincia='" & MiCliente.IdProvincia.ToString & "'")
+        vSQL.Append(",Fecha='" & MiCliente.Fecha & "'")
+        vSQL.Append(",Saldo='" & MiCliente.Saldo & "'")
 
         'Actualizo la tabla personas con el Id.
         Dim resultado As Boolean

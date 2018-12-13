@@ -83,4 +83,91 @@
 
     End Sub
 
+    Private Sub TextBox2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox2.KeyPress
+        If Char.IsLetter(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+
+    End Sub
+
+    Private Sub ComboBox1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles ComboBox1.KeyPress
+        e.Handled = True
+    End Sub
+
+    Private Sub TextBox3_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox3.KeyPress
+
+        If Not Char.IsNumber(e.KeyChar) And Not Char.IsControl(e.KeyChar) And Not e.KeyChar = "-" And Not e.KeyChar = "/" And Not e.KeyChar = "," And Not e.KeyChar = "." And Not e.KeyChar = ";" Then
+
+
+
+            e.Handled = True
+
+
+
+            Exit Sub
+
+        End If
+
+
+        Dim pos As Integer = TextBox3.SelectionStart
+
+
+
+
+
+        If pos <> 2 And pos <> 5 And (e.KeyChar = "-" Or e.KeyChar = "/" Or e.KeyChar = "." Or e.KeyChar = "," Or e.KeyChar = ";") Then
+
+
+
+
+
+            e.Handled = True
+
+
+
+
+
+            Exit Sub
+
+        End If
+
+
+
+        If Char.IsNumber(e.KeyChar) And (pos = 2 Or pos = 5) Then
+
+            e.Handled = True
+            Exit Sub
+
+        End If
+
+
+    End Sub
+
+    Private Sub TextBox4_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox4.KeyPress
+
+
+        If Not Char.IsNumber(e.KeyChar) And Not Char.IsControl(e.KeyChar) And Not e.KeyChar = "," Then
+
+
+
+            e.Handled = True
+
+
+
+
+            Exit Sub
+        End If
+
+
+
+    End Sub
+
+
+
 End Class
